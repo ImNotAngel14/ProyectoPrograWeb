@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="esp">
 
 <head>
     <meta charset="UTF-8">
@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="signIn.css">
     <title>Registrar usuario</title>
     <link rel="shortcut icon" href="logo/logo.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <img src="logo/fondo.png" alt="">
+    
 
     <header class="grid">
         <img src="logo/logo_connombre.png" alt="" >
@@ -22,14 +23,14 @@
     <form action="#" method="get" target="_blank">
         <fieldset>
             <legend> Introduzca sus datos personales </legend>
-            <p> Nombres: <input type="text" name="txt_nombres" placeholder="nombre(s)"/></p>
-            <p> Apellido paterno: <input type="text" name="txt_apellidoP" placeholder="apellido paterno"/></p>
-            <p> Apellido materno: <input type="text" name="txt_apellidoM" placeholder="apellido materno"/></p>
-            <p> Fecha de nacimiento: <input type="date" name="fechaNacimiento"/></p>
-            <p> Correo: <input type="email" name="correo" placeholder="correo electronico" /></p>
-            <p> Usuario: <input type="text" name="usuario" placeholder="usuario"/></p>
-            <p> Contraseña: <input type="password" name="contraseña" placeholder="contraseña"/></p>
-            <p> Confirmar ontraseña: <input type="password" name="confirmarContraseña" placeholder="confirmar contraseña"/></p>
+            <p> Nombres: <input type="text" id="txtnombres" placeholder="nombre(s)"/></p>
+            <p> Apellido paterno: <input type="text" id="txt_apellidoP" placeholder="apellido paterno"/></p>
+            <p> Apellido materno: <input type="text" id="txt_apellidoM" placeholder="apellido materno"/></p>
+            <p> Fecha de nacimiento: <input type="date" id="fechaNacimiento"/></p>
+            <p> Correo: <input type="email" id="txtcorreo" placeholder="correo electronico" /></p>
+            <p> Usuario: <input type="text" id="txt_usuario" placeholder="usuario"/></p>
+            <p> Contraseña: <input type="password" id="txtcontrasena" placeholder="contraseña"/></p>
+            <p> Confirmar ontraseña: <input type="password" id="txtconfirmarContrasena" placeholder="confirmar contraseña"/></p>
             <p> Imagen de usuario: <input type="file"/></p>
             <!--
             <input type="image"/>
@@ -38,7 +39,8 @@
         <br>
         <input type="submit" id="guardarRegistro" value="Enviar"/>
     </form>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <img src="logo/fondo.png" alt="">
+    
     <script src="signIn.js"></script>
 </section>
 </body>
