@@ -10,34 +10,26 @@ $(document).ready(function(){
         }
     });
     function isSubmitOk(){
-        var valid = false;
         //var nombres;
         //var apellidoP;
         //var apellidoM;
         //var fechaNacimiento;
         var correo=document.getElementById("txtcorreo").value;
         
-        if(isValidEmail(correo)){
-            console.log(correo);
-        }
-        else{
+        if(isValidEmail(correo)== false){
             return false;
         }
         var contrasena = document.getElementById("txtcontrasena").value;
         var confirmContrasena = document.getElementById("txtconfirmarContrasena").value;
         if(isStrongPassword(contrasena)){
             
-            if(doPasswordsMatch(contrasena, confirmContrasena)){
-                console.log(contrasena);
-                console.log(confirmContrasena);
-            }
-            else{
+            if(doPasswordsMatch(contrasena, confirmContrasena)==false){
                 return false;
             }
         }else{
             return false;
         }
-       
+       return true;
     }
 
     function isValidEmail(_texto){
@@ -46,9 +38,8 @@ $(document).ready(function(){
         var haveEnterprise = false;;
         var haveDot = false;
         var haveTermination = false;
-        
         for(var i = 0; i < _texto.length; i++){
-            if(!haveAt){
+            if(haveAt == false){
                 if(_texto[i]=='@'){
                     if(i>0){
                         haveUser = true;
@@ -57,11 +48,15 @@ $(document).ready(function(){
                         if(_texto[j] == '.'){
                             break;
                         }
+                        else{
+                            haveEnterprise = true;
+                        }
                     }
                     else{
                         break;
                     }
                 }
+                
             }
             else{
                 if(_texto[i] == '.'){
