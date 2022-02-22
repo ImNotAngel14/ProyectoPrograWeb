@@ -1,13 +1,11 @@
 $(document).ready(function(){
     $("#guardarRegistro").click(function(){
         if(isSubmitOk()){
+            document.getElementById("formulario").onsubmit = " return true"; 
            alert("Registrado");
         }
-        else{
-            //document.getElementById("guardarRegistro").onsubmit = false; 
-            alert("Registro erroneo");
-        }
     });
+
     function isSubmitOk(){
         var nombres= document.getElementById("txtnombres").value;
         var apellidoP= document.getElementById("txtapellidoP").value;
@@ -30,6 +28,7 @@ $(document).ready(function(){
                 return false;
             }
         }else{
+            alert("La contraseña no es lo suficientemente fuerte. Debe ser mayor a 8 caracteres y contar con 1 mayuscula, 1 minuscula, 1 digito y un signo de puntuacion.");
             return false;
         }
        return true;
@@ -45,26 +44,23 @@ $(document).ready(function(){
     }
 
     function isValidFullName(_nombres, _apellido, _apellido2){
-        validar = /^[A-z]+$/;
+        validar = /^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;;
         for(var i =0; i< _apellido.length; i ++){
-            if(_apellido[i].match(validar) == false){
-                alert("apellido no tiene un formato correcto");
+            if(!_apellido[i].match(validar)){
+                alert("apellido solo acepta letras");
                 return false;
             }
         }
         for(var i =0; i< _apellido2.length; i ++){
-            if(_apellido2[i].match(validar) == false){
-                alert("apellido no tiene un formato correcto");
+            if(!_apellido2[i].match(validar)){
+                alert("apellido solo acepta letras");
                 return false;
             }
         }
         for(var i =0; i< _nombres.length; i ++){
-            if(_nombres[i].match(validar) == false){
-                if(_nombres[i] != ' ')
-                {
-                    alert("nombre no tiene un formato correcto");
-                    return false;
-                }
+            if(!_nombres[i].match(validar)){
+                alert("nombre solo acepta letras y espacios");
+                return false;
             }
         }
         return true;
@@ -129,7 +125,10 @@ $(document).ready(function(){
         var haveMinus= false;
         var haveNumber= false;
         var havePSign= false;
-
+        var passLength = _texto.length;
+        if(passLength <8){
+            return false;
+        }
         for(var i = 0;i<_texto.length; i++){
             validar = /^[0-9]+$/;
             if(_texto[i].match(validar)){
@@ -154,9 +153,6 @@ $(document).ready(function(){
                                         havePSign = true;
                                         break;  
             }
-            if(_texto[i].match(validar)){
-                havePSign = true;
-            }
         }
         if(haveMayus){
             if(haveMinus){
@@ -167,7 +163,6 @@ $(document).ready(function(){
                 }
             }
         }
-        alert("La contraseña no es lo suficientemente fuerte. Debe ser mayor a 8 caracteres y contar con 1 mayuscula, 1 minuscula, 1 digito y un signo de puntuacion.");
         return false;
     }
     function doPasswordsMatch(_contra1, _contra2){
@@ -178,6 +173,7 @@ $(document).ready(function(){
         }else{
             for(var j = 0; j<longitud; j++){
                 if(_contra1[j] != _contra2[j]){
+                    alert("Las contraseñas no coinciden.")
                     return false;
                 }
             }
