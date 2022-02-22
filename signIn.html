@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar usuario</title>
+    <link rel="shortcut icon" href="logo/logo.png">
+</head>
+<body>
+    <form action="#" method="get" target="_self">
+        <fieldset>
+            <legend> Introduzca sus datos personales </legend>
+            <p> Nombres: <input type="text" name="txt_nombres" placeholder="nombre(s)"/></p>
+            <p> Apellido paterno: <input type="text" name="txt_apellidoP" placeholder="apellido paterno"/></p>
+            <p> Apellido materno: <input type="text" name="txt_apellidoM" placeholder="apellido materno"/></p>
+            <p> Fecha de nacimiento: <input type="date" name="fechaNacimiento"/></p>
+            <p> Correo: <input type="email" name="correo" placeholder="correo electronico" /></p>
+            <p> Usuario: <input type="text" name="usuario" placeholder="usuario"/></p>
+            <p> Contraseña: <input type="password" name="contraseña" placeholder="contraseña"/></p>
+            <p> Confirmar ontraseña: <input type="password" name="confirmarContraseña" placeholder="confirmar contraseña"/></p>
+            <p> Imagen de usuario: <input type="file"/></p>
+            <!--
+            <input type="image"/>
+            -->
+        </fieldset>
+        <br>
+        <input type="submit" id="guardarRegistro" value="Enviar"/>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="signIn.js"></script>
+</body>
+</html>
