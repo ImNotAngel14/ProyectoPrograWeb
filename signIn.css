@@ -1,3 +1,52 @@
-.grid{
-    background-color: rgb(55, 55, 128);
+html{
+    font-family: 'Montserrat Alternates', sans-serif;
 }
+
+.grid{
+    background-color: rgb(51, 94, 134);
+    text-align: center;
+    border: 5px solid rgb(193, 228, 245);
+    border-style:dotted;
+}
+
+body{
+    background-color:rgb(243, 236, 243);
+    background-image: url('logo/fondo.png');
+    background-size: 1400px;
+    height: 1380px;
+}
+
+
+.container {
+    width: 500px;
+    margin: 0 auto;
+    background-color:rgb(122, 170, 192);
+}
+
+legend{
+    text-align: center;
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 24px;
+    
+}
+
+p{
+
+    background-color:rgb(255, 255, 255);
+    
+    
+    padding: 20px;
+    border: 5px solid rgb(255, 255, 255);
+    
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+    text-align: center;
+
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 18px;
+
+}
+

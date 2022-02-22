@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="login.css">
     <title>ImNot A Blog</title>
     <link rel="shortcut icon" href="logo/logo.png">
@@ -11,11 +14,26 @@
 <body>
     <header class="grid">
         <img src="logo/logo_connombre.png" alt="" >
-    </header>
+        </header>
+       
+        <section class="container">
+             <form action="#" method="get" target="_blank">
+                 <fieldset>
+                    <legend> Inicie sesión </legend>
+                    <p> Usuario: <input type="text" name="usuario" placeholder="usuario"/></p>
+                    <p> Contraseña: <input type="password" name="contraseña" placeholder="contraseña"/></p>
+                    <p href="signIn.html">¿No tienes una cuenta? Registrate</p>
+                    <!--
+                    <input type="image"/>
+                    -->
+                    </fieldset>
+                    <br>
+                    <input type="submit" id="guardarRegistro" value="Enviar"/>
+            </form>
     <form action="#" method="get" target="_blank">
-
     </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="login.js"></script>
+        </section>
 </body>
 </html>
