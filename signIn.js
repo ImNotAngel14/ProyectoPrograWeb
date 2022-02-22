@@ -10,12 +10,15 @@ $(document).ready(function(){
         }
     });
     function isSubmitOk(){
-        //var nombres;
-        //var apellidoP;
-        //var apellidoM;
+        var nombres= document.getElementById("txtnombres").value;
+        var apellidoP= document.getElementById("txtapellidoP").value;
+        var apellidoM= document.getElementById("txtapellidoM").value;
+        if(isValidFullName(nombres, apellidoP, apellidoM) == false){
+            console.log("falso");
+            return false;
+        }
         //var fechaNacimiento;
         var correo=document.getElementById("txtcorreo").value;
-        
         if(isValidEmail(correo)== false){
             return false;
         }
@@ -30,6 +33,30 @@ $(document).ready(function(){
             return false;
         }
        return true;
+    }
+
+    function isValidFullName(_nombres, _apellido, _apellido2){
+        validar = /^[A-z]+$/;
+        for(var i =0; i< _apellido.length; i ++){
+            if(_apellido[i].match(validar) == false){
+                return false;
+            }
+        }
+        for(var i =0; i< _apellido2.length; i ++){
+            if(_apellido2[i].match(validar) == false){
+                return false;
+            }
+        }
+        for(var i =0; i< _nombres.length; i ++){
+            if(_nombres[i].match(validar) == false){
+                if(_nombres[i] != ' ')
+                {
+                    return false;
+                }
+            }
+        }
+        console.log("el nombre es valido");
+        return true;
     }
 
     function isValidEmail(_texto){
