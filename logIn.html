@@ -17,23 +17,21 @@
         </header>
        
         <section class="container">
-             <form action="main.html" target="_self">
+             <form action="main.html" target="_self" id="iniciar" onsubmit="return false">
                  <fieldset>
                     <legend> Inicie sesión </legend>
-                    <p> Usuario: <input type="text" name="usuario" placeholder="usuario"required/></p>
-                    <p> Contraseña: <input type="password" name="contraseña" placeholder="contraseña"required/></p>
-                    <p>¿No tienes una cuenta? 
-                        <a href="signIn.html">Registrate</a>
+                    <p> Usuario: <input type="text" id="usuario" placeholder="usuario"required/></p>
+                    <p> Contraseña: <input type="password" id="contraseña" placeholder="contraseña"required/></p>
                     </p>
                     <!--
                     <input type="image"/>
                     -->
-                    </fieldset>
+                </fieldset>
                     <br>
-                    <input type="submit" id="guardarRegistro" value="Enviar"/>
+                    <input type="submit" id="guardarRegistro" value="Iniciar sesión"/>
             </form>
-    <form action="#" method="get" target="_blank">
-    </form>
+            <p>¿No tienes una cuenta? 
+                <a href="signIn.html">Registrate</a>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="login.js"></script>
         </section>

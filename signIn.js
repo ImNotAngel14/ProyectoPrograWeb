@@ -2,7 +2,7 @@ $(document).ready(function(){
     $("#guardarRegistro").click(function(){
         if(isSubmitOk()){
             document.getElementById("formulario").onsubmit = " return true"; 
-           alert("Registrado");
+            alert("Registrado");
         }
     });
 
