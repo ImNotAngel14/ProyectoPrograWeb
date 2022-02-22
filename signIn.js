@@ -1,12 +1,11 @@
 $(document).ready(function(){
     $("#guardarRegistro").click(function(){
-        //window.open("login.html", "A", "width=300, height=200")
-        //alert("Guardado con exito");
         if(isSubmitOk()){
-           alert("es valido");
+           alert("Registrado");
         }
         else{
-            alert("no es valido");
+            //document.getElementById("guardarRegistro").onsubmit = false; 
+            alert("Registro erroneo");
         }
     });
     function isSubmitOk(){
@@ -14,10 +13,11 @@ $(document).ready(function(){
         var apellidoP= document.getElementById("txtapellidoP").value;
         var apellidoM= document.getElementById("txtapellidoM").value;
         if(isValidFullName(nombres, apellidoP, apellidoM) == false){
-            console.log("falso");
             return false;
         }
-        //var fechaNacimiento;
+        var fechaNacimiento = document.getElementById("fechaNacimiento").value;
+        isValidDate(fechaNacimiento);
+        //funcion
         var correo=document.getElementById("txtcorreo").value;
         if(isValidEmail(correo)== false){
             return false;
@@ -35,15 +35,26 @@ $(document).ready(function(){
        return true;
     }
 
+    function isValidDate(_date){
+        var sYear = _date.slice(0,4);
+        var year = Number(sYear);
+        if(year < 2022){
+            return false;
+        }
+        return true;
+    }
+
     function isValidFullName(_nombres, _apellido, _apellido2){
         validar = /^[A-z]+$/;
         for(var i =0; i< _apellido.length; i ++){
             if(_apellido[i].match(validar) == false){
+                alert("apellido no tiene un formato correcto");
                 return false;
             }
         }
         for(var i =0; i< _apellido2.length; i ++){
             if(_apellido2[i].match(validar) == false){
+                alert("apellido no tiene un formato correcto");
                 return false;
             }
         }
@@ -51,11 +62,11 @@ $(document).ready(function(){
             if(_nombres[i].match(validar) == false){
                 if(_nombres[i] != ' ')
                 {
+                    alert("nombre no tiene un formato correcto");
                     return false;
                 }
             }
         }
-        console.log("el nombre es valido");
         return true;
     }
 
@@ -109,6 +120,7 @@ $(document).ready(function(){
                 }
             }
         }
+        alert("correo no tiene un formato correcto");
         return false;
     }
     
@@ -132,6 +144,16 @@ $(document).ready(function(){
                 haveMinus = true;
             }
             //validar = /^[A-Z]+$/;
+            switch(_texto[i]){
+                case '.':
+                    case ',':
+                        case ':':
+                            case ';':
+                                case '!':
+                                    case '?':
+                                        havePSign = true;
+                                        break;  
+            }
             if(_texto[i].match(validar)){
                 havePSign = true;
             }
@@ -139,11 +161,13 @@ $(document).ready(function(){
         if(haveMayus){
             if(haveMinus){
                 if(haveNumber){
-                    //aqui va la validacion de sign
-                    return true;
+                    if(havePSign){
+                        return true;
+                    }
                 }
             }
         }
+        alert("La contraseña no es lo suficientemente fuerte. Debe ser mayor a 8 caracteres y contar con 1 mayuscula, 1 minuscula, 1 digito y un signo de puntuacion.");
         return false;
     }
     function doPasswordsMatch(_contra1, _contra2){
