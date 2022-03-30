@@ -101,3 +101,30 @@ button:hover{
 background: rgb(240, 202, 237);
 color: rgb(90, 23, 90);
 }
+
+#public{
+    height: 200px;
+    width: 400px;
+}
+
+#inicio{
+    color: white;
+    vertical-align: middle;
+}
+
+#btnPublicar{
+    text-align: center;
+    width: 140px;
+    height: 70px;
+    background: rgb(158, 92, 153);
+    border-radius: 3px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    transition: .3s ease all;
+}
+#btnPublicar :hover{
+    background: rgb(240, 202, 237);
+    color: rgb(90, 23, 90);
+    }
