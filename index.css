@@ -1,0 +1,40 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.grid{
+    text-align: center;
+}
+
+.container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+button{
+    width: 300px;
+    height: 300px;
+    background-color: blueviolet;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    padding: 30px;
+    color:azure;
+    font-size: 200px;
+    transition: .3s ease all;
+}
+
+button:hover {
+    background-color: azure;
+    color: rgb(235, 160, 196);
+    box-shadow: 3px 3px 50px rgb(34, 30, 65);
+}
+
+.col-2{
+    text-align: center;
+}
+
+.col-5{
+    font-size: 30px;
+}

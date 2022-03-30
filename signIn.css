@@ -12,8 +12,7 @@ html{
 body{
     background-color:rgb(243, 236, 243);
     background-image: url('logo/fondo.png');
-    background-size: 1400px;
-    height: 1380px;
+    background-size: cover;
 }
 
 .container {
